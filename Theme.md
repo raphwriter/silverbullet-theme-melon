@@ -147,8 +147,6 @@ html[data-theme="dark"] {
   --editor-command-button-border-color: var(--melon-color-text);
 }
 
-
-
 ```
 
 
