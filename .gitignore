@@ -1,0 +1,14 @@
+# ignore everything
+#*
+
+# except...
+#!Theme/
+#!Theme.md
+#!Theme/**
+
+#!Fonts/
+#!Fonts/**
+
+# also ignore
+#Fonts/Monoid
+#Theme/Fonts/Monoid.*
