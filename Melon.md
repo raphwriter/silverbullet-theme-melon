@@ -5,7 +5,7 @@ aliases:
   - "melon"
   - "melon-theme-sb"
 pageDecoration: 
-  prefix: 🍉
+  prefix: "🍉 "
 ---
 ```space-style
 

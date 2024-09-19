@@ -8,7 +8,7 @@
   font-family: 'Fira Mono'; 
   font-style: normal; 
   font-weight: 400;
-  src: url('Library/Personal/Fonts/FiraMono/FiraMono-Regular.woff') format('woff');
+  src: url('Library/Personal/Themes/Fonts/FiraMono/FiraMono-Regular.woff') format('woff');
 }
 
 /* ## Fira Sans Light */
@@ -16,7 +16,7 @@
   font-family: 'Fira Sans'; 
   font-style: normal; 
   font-weight: 300; 
-  src: url('Library/Personal/Fonts/FiraSans/FiraSans-Light.woff') format('woff');
+  src: url('Library/Personal/Themes/Fonts/FiraSans/FiraSans-Light.woff') format('woff');
 }
 
 /* ## Fira Sans Regular */
@@ -24,7 +24,7 @@
   font-family: 'Fira Sans';
   font-style: normal;
   font-weight: 400;
-  src: url('Library/Personal/Fonts/FiraSans/FiraSans-Regular.woff') format('woff');
+  src: url('Library/Personal/Themes/Fonts/FiraSans/FiraSans-Regular.woff') format('woff');
 }
 
 /* ## Fira Code Regular */
@@ -32,7 +32,7 @@
   font-family: 'Fira Code'; 
   font-style: normal; 
   font-weight: 300; 
-  src: url('Library/Personal/Fonts/FiraCode/FiraCode-Regular.woff') format('woff');
+  src: url('Library/Personal/Themes/Fonts/FiraCode/FiraCode-Regular.woff') format('woff');
 }
 
 /* ## Fira Code Bold */
@@ -40,7 +40,7 @@
   font-family: 'Fira Code'; 
   font-style: normal; 
   font-weight: 600; 
-  src: url('Library/Personal/Fonts/FiraCode/FiraCode-Bold.woff') format('woff');
+  src: url('Library/Personal/Themes/Fonts/FiraCode/FiraCode-Bold.woff') format('woff');
 }
 
 /* ## Roboto Slab Light */
@@ -48,7 +48,7 @@
   font-family: 'Roboto Slab';
   font-style: normal;
   font-weight: 200;
-  src: url('Library/Personal/Fonts/roboto-slab-v11-latin-200.woff') format('woff');
+  src: url('Library/Personal/Themes/Fonts/roboto-slab-v11-latin-200.woff') format('woff');
 }
 
 /* ## Roboto Slab Regular */
@@ -56,7 +56,7 @@
   font-family: 'Roboto Slab';
   font-style: normal;
   font-weight: 300;
-  src: url('Library/Personal/Fonts/RobotoSlab/roboto-slab-v11-latin-300.woff') format('woff');
+  src: url('Library/Personal/Themes/Fonts/RobotoSlab/roboto-slab-v11-latin-300.woff') format('woff');
 }
 
 /* ## Roboto Slab Medium */
@@ -64,7 +64,7 @@
   font-family: 'Roboto Slab';
   font-style: normal;
   font-weight: 400;
-  src: url('Library/Personal/Fonts/RobotoSlab/roboto-slab-v11-latin-regular.woff') format('woff');
+  src: url('Library/Personal/Themes/Fonts/RobotoSlab/roboto-slab-v11-latin-regular.woff') format('woff');
 
 }
 
@@ -73,7 +73,7 @@
   font-family: 'Roboto Slab';
   font-style: normal;
   font-weight: 600;
-  src: url('Library/Personal/Fonts/RobotoSlab/roboto-slab-v11-latin-600.woff') format('woff');
+  src: url('Library/Personal/Themes/Fonts/RobotoSlab/roboto-slab-v11-latin-600.woff') format('woff');
 }
 
 html {
