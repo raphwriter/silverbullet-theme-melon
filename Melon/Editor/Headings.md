@@ -6,7 +6,7 @@
 #sb-main .cm-editor .cm-line:is(.sb-line-h1, .sb-line-h2, .sb-line-h3, .sb-line-h4, .sb-line-h5, .sb-line-h6) {
   font-weight: unset;
   font-family: var(--ui-font);
-  padding-top: 1em;
+  padding-block: 1em 0.3em;
 }
 
 #sb-main .cm-editor .cm-content div.cm-line.sb-line-h1:nth-of-type(1),

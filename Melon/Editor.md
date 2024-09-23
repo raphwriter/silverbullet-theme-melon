@@ -2,11 +2,10 @@
 /* ------------------------------------------------------------------------- */
 /* # Main Editor Area  */
 /* ------------------------------------------------------------------------- */
-html[data-theme="light"] #sb-main {
-  background-color: #fcfcfd;
-  /* candidates: #647479, #f3f6f7, #fcfcfd */
-}
 
+html[data-theme="light"] #sb-main {
+  background-color: #fcfcfd; /*TODO - assign variable + dark theme */
+}
 
 /* Move Editor to Left */
 #sb-main .cm-editor .cm-content {  
@@ -16,15 +15,14 @@ html[data-theme="light"] #sb-main {
   min-height: unset;
 }
 
-
 /* Change Colors, Add Shadow */
+/* TODO same for dark theme */
 html[data-theme="light"] #sb-main .cm-editor .cm-content {  /* Add Box Shadow to Editor */
   background-color: var(--editor-main-background-color);
   box-shadow: var(--editor-main-box-shadow);
   padding-block: 0;
   /*border-inline: 1px solid #d7d7d7;*/
 }
-
 
 #sb-main #sb-editor .cm-scroller .cm-content .sb-code,
 #sb-main .cm-editor .cm-line.sb-line-fenced-code {
@@ -36,21 +34,13 @@ html[data-theme="light"] #sb-main .cm-editor .cm-content {  /* Add Box Shadow to
   padding-block: 0;
 }
 
-
-/* ## Blockquotes */
-#sb-main .cm-editor .sb-blockquote-outside,
-#sb-main .cm-editor .sb-line-blockquote.cm-line {
-  border-width: 2px;
-  text-indent: unset;
-  padding: 3px 0;
-  margin-top: 1em;
-  padding-left: 10px;
-}
-/* Remove Top Margin From Adjacent Blockquote Lines */
-#sb-main .cm-editor .sb-blockquote-outside + .sb-blockquote-outside,
-#sb-main .cm-editor .sb-line-blockquote.cm-line + .sb-line-blockquote.cm-line {
-  margin-top: 0;
+/* ## Text Selections */
+#sb-main #sb-editor .cm-editor .cm-scroller .cm-content ::selection {
+  background-color: var(--selection-background-color) !important;
 }
 
+#sb-top .main .inner .wrapper .sb-mini-editor .cm-editor .cm-scroller .cm-line::selection {
+  background-color: var(--melon-top-selection-color); /* Selection in Top Bar (aka page name) */
+}
 
 ```

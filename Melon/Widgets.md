@@ -3,15 +3,14 @@
 /* # Widgets & Front Matter */
 /* ------------------------------------------------------------------------- */
 
-/* Remove Border from Sidebar */
 #sb-main .sb-panel:first-child {
   /*border-right: none;*/
   border-right: 1px dashed var(--panel-border-color);
-  padding-right: 0.2em;
+  /*padding-right: 0.2em;*/
 }
 
 /* ## Widgets Top */
-html[data-theme="light"] #sb-main .cm-editor .sb-markdown-top-widget {
+#sb-main .cm-editor .sb-markdown-top-widget {
   background-color: var(--editor-top-widget-background-color);
   border: none;
   border-bottom: 1px dashed var(--panel-border-color);

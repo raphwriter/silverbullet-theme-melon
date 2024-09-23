@@ -31,4 +31,8 @@
 #sb-main .cm-editor .sb-command-button::after {
   content: " ‣";
 }
+
+#sb-main #sb-editor .cm-editor .cm-panels .cm-search.cm-panel button.cm-button {
+  color: var(--melon-button-color);
+}
 ```

@@ -17,8 +17,11 @@
 /* Keyword (inline) */
 #sb-main .cm-editor .sb-keyword {
   font-weight: 600;
-  color: #455e59;
 }
+
+html[data-theme="light"] #sb-main .cm-editor .sb-keyword {color: #455e59;}
+html[data-theme="dark"] #sb-main .cm-editor .sb-keyword {color: #78aea4;}
+
 
 /* Inline Code */
 #sb-main #sb-editor .cm-scroller .cm-content .sb-code {

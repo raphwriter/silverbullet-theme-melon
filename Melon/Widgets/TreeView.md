@@ -18,7 +18,7 @@ html .treeview-root {
   --treeview-node-border-width: 2px;
   --treeview-node-border-radius: 2px;
 
-  --treeview-page-color: #666363 !important;
+
   --treeview-page-background-color: var(--editor-main-background-color);
   --treeview-page-border-color: var(--treeview-page-background-color);
 
@@ -26,9 +26,19 @@ html .treeview-root {
   --treeview-current-page-border-color: var(--top-background-color);
   --treeview-current-page-color: var(--top-color);
   
-  --treeview-folder-color: #8c8c8c !important;
+
   --treeview-folder-background-color: var(--treeview-page-background-color);
   --treeview-folder-border-color: var(--treeview-page-background-color);
+}
+
+html[data-theme="light"] .treeview-root {
+    --treeview-page-color: #666363 !important;
+    --treeview-folder-color: #8c8c8c !important;
+}
+
+html[data-theme="dark"] .treeview-root {
+    --treeview-page-color: #cacaca !important;
+    --treeview-folder-color: #939595 !important;
 }
 
 .treeview-root {

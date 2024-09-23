@@ -1,11 +1,11 @@
 ```space-style
 /* ## Links */
-html[data-theme="light"] #sb-main .cm-editor .sb-markdown-top-widget a.wiki-link,
-html[data-theme="light"] #sb-main .cm-editor .sb-markdown-top-widget .sb-wiki-link-page-missing,
-html[data-theme="light"] #sb-main #sb-editor .cm-editor .cm-scroller .cm-content a.sb-wiki-link-page-missing,
-html[data-theme="light"] #sb-main #sb-editor .cm-editor .cm-scroller .cm-content a.sb-wiki-link-page,
-html[data-theme="light"] #sb-main #sb-editor .cm-editor .cm-scroller .cm-content .sb-markdown-bottom-widget div.content span.p a.wiki-link,
-html[data-theme="light"] #sb-main .cm-editor .sb-markdown-widget a.wiki-link
+#sb-main .cm-editor .sb-markdown-top-widget a.wiki-link,
+#sb-main .cm-editor .sb-markdown-top-widget .sb-wiki-link-page-missing,
+#sb-main #sb-editor .cm-editor .cm-scroller .cm-content a.sb-wiki-link-page-missing,
+#sb-main #sb-editor .cm-editor .cm-scroller .cm-content a.sb-wiki-link-page,
+#sb-main #sb-editor .cm-editor .cm-scroller .cm-content .sb-markdown-bottom-widget div.content #span.p a.wiki-link,
+#sb-main .cm-editor .sb-markdown-widget a.wiki-link
 {
   background: none;
   border-bottom: 1px solid var(--link-color);
@@ -16,8 +16,8 @@ html[data-theme="light"] #sb-main .cm-editor .sb-markdown-widget a.wiki-link
 }
 
 /* Broken Links and Links to Missing Pages */
-html[data-theme="light"] #sb-main .cm-editor .sb-markdown-top-widget .sb-wiki-link-page-missing,
-html[data-theme="light"] #sb-main #sb-editor .cm-editor .cm-scroller .cm-content a.sb-wiki-link-page-missing {
+#sb-main .cm-editor .sb-markdown-top-widget .sb-wiki-link-page-missing,
+#sb-main #sb-editor .cm-editor .cm-scroller .cm-content a.sb-wiki-link-page-missing {
   border-bottom: 1px dashed var(--link-color);
 }
 a.sb-wiki-link-page-missing, .sb-wiki-link-page-missing > .sb-wiki-link-page {
