@@ -1,0 +1,94 @@
+name: Extract, Merge, and Optimize CSS from Markdown
+
+on:
+  push:
+    branches:
+      - main  # Or any other branch you want to run this on
+
+jobs:
+  process-css:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+
+      - name: Install dependencies
+        run: |
+          npm init -y
+          # Install PostCSS and necessary plugins
+          npm install postcss postcss-cli postcss-import postcss-combine-duplicated-selectors cssnano glob
+
+      - name: Create PostCSS config
+        run: |
+          echo "module.exports = {
+            plugins: [
+              require('postcss-import'),
+              require('postcss-combine-duplicated-selectors'),
+              require('cssnano')({
+                preset: 'default',
+              })
+            ]
+          };" > postcss.config.js
+
+      - name: Extract CSS from Markdown files
+        run: |
+          # Create directory for merged CSS
+          mkdir -p merged_css
+
+          # Node.js script to extract CSS code blocks from Markdown files
+          echo 'const fs = require("fs");' > extractAndMergeCss.js
+          echo 'const path = require("path");' >> extractAndMergeCss.js
+          echo 'const glob = require("glob");' >> extractAndMergeCss.js
+          echo 'function extractCSSFromMarkdown(content) {' >> extractAndMergeCss.js
+          echo '  const cssBlocks = [];' >> extractAndMergeCss.js
+          echo '  const codeBlockRegex = /```css[\\s\\S]*?```/g;' >> extractAndMergeCss.js
+          echo '  let match;' >> extractAndMergeCss.js
+          echo '  while ((match = codeBlockRegex.exec(content)) !== null) {' >> extractAndMergeCss.js
+          echo '    cssBlocks.push(match[0].replace(/```css/g, "").replace(/```/g, "").trim());' >> extractAndMergeCss.js
+          echo '  }' >> extractAndMergeCss.js
+          echo '  return cssBlocks.join("\\n");' >> extractAndMergeCss.js
+          echo '}' >> extractAndMergeCss.js
+          echo 'const markdownFiles = glob.sync("**/*.md");' >> extractAndMergeCss.js
+          echo 'let mergedCSS = "";' >> extractAndMergeCss.js
+          echo 'markdownFiles.forEach(file => {' >> extractAndMergeCss.js
+          echo '  const content = fs.readFileSync(file, "utf8");' >> extractAndMergeCss.js
+          echo '  const cssContent = extractCSSFromMarkdown(content);' >> extractAndMergeCss.js
+          echo '  if (cssContent) {' >> extractAndMergeCss.js
+          echo '    mergedCSS += cssContent + "\\n";' >> extractAndMergeCss.js
+          echo '  }' >> extractAndMergeCss.js
+          echo '});' >> extractAndMergeCss.js
+          echo 'fs.writeFileSync("merged_css/merged.css", mergedCSS.trim());' >> extractAndMergeCss.js
+
+          # Run the Node.js script to extract and merge the CSS
+          node extractAndMergeCss.js
+
+      - name: Optimize the merged CSS using PostCSS
+        run: |
+          # Optimize the extracted and merged CSS using PostCSS
+          npx postcss merged_css/merged.css -o merged_css/optimized.css
+
+      - name: Create a new Markdown file with the merged CSS code block
+        run: |
+          # Create the new Markdown file with the optimized CSS code block
+          echo "# Merged and Optimized CSS\n" > merged_css/merged_css_output.md
+          echo "\`\`\`css" >> merged_css/merged_css_output.md
+          cat merged_css/optimized.css >> merged_css/merged_css_output.md
+          echo "\`\`\`" >> merged_css/merged_css_output.md
+
+      - name: Commit and push the changes
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+
+          # Add the new Markdown file
+          git add merged_css/merged_css_output.md
+          git commit -m 'Add merged and optimized CSS inside a Markdown file'
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
